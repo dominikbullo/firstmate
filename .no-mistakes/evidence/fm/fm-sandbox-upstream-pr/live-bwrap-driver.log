@@ -1,0 +1,41 @@
+CASE=/tmp/fm-spawn-sandbox.6kaS0r/live HOME=/tmp/fm-spawn-sandbox.6kaS0r/live/home WT=/tmp/fm-spawn-sandbox.6kaS0r/live/wt STATE=/tmp/fm-spawn-sandbox.6kaS0r/live/home/state FAKEBIN=/tmp/fm-spawn-sandbox.6kaS0r/live/fake/fakebin
+SPAWN status=0 out=spawned sbx-live-a1 harness=omp kind=scout window=firstmate:fm-sbx-live-a1 worktree=/tmp/fm-spawn-sandbox.6kaS0r/live/wt sandbox=strict
+META sandbox=strict
+--- pane
+PROBE task=unset inbox=/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.inbox comp=1
+PROBE pwd=/tmp/fm-spawn-sandbox.6kaS0r/live/wt
+PROBE victim-meta hidden
+PROBE state-list: operational-inbox sbx-live-a1.git-hooks sbx-live-a1.inbox sbx-live-a1.omp-ext.ts sbx-live-a1.sbx sbx-live-a1.status sbx-live-a1.turn-ended
+PROBE state WRITABLE
+PROBE fmhome write denied
+PROBE own status writable
+PROBE own data writable
+PROBE coderoot bin read-only
+PROBE projects hidden
+PROBE busy event spooled
+PROBE idle event spooled
+PROBE-END
+--- busy record
+sbx-live-a1.busy-gen
+sbx-live-a1.busy-state
+sbx-live-a1.git-hooks
+sbx-live-a1.inbox
+sbx-live-a1.meta
+sbx-live-a1.omp-ext.ts
+sbx-live-a1.sbx
+sbx-live-a1.status
+sbx-live-a1.turn-ended
+g1795075276.3618022.27021
+v1 gen=g1795075276.3618022.27021 seq=3 state=idle source=omp-ext event=live-done ts=1795075283
+--- relay.log
+--- wrapper.log
+1795075280 profile=strict wt=/tmp/fm-spawn-sandbox.6kaS0r/live/wt helper=/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.sbx/relay-helper envs=COMPACT_ADVISER_DISABLE FM_TASK_INBOX
+--- escape files on host
+ls: cannot access '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/escape': No such file or directory
+ls: cannot access '/tmp/fm-spawn-sandbox.6kaS0r/live/home/config/escape': No such file or directory
+ls: cannot access '{run-worktree}/bin/escape': No such file or directory
+--- status
+working
+note
+--- relay processes
+3617556 /run/current-system/sw/bin/zsh -c source ~/.claude/shell-snapshots/snapshot-zsh-1795075023549-jochkx.sh 2>/dev/null || true && \builtin setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL NO_BRACE_CCL NO_MAGIC_EQUAL_SUBST NO_EQUALS 2>/dev/null || true && { \builtin unalias -- 'which'; \builtin unset -f -- 'which'; } >/dev/null 2>&1 || true && { \builtin unalias -- 'unsetenv'; \builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'L=/tmp/fmsbx-live; E=~/.no-mistakes/evidence/01M7SAEG4Q5985EFNXAN3D8K22; python3 - <<'"'"'PY'"'"' p='"'"'/tmp/fmsbx-live/driver.sh'"'"' s=open(p).read() s=s.replace('"'"'launch=$(grep -F bwrap-wrapper "$LAUNCH_LOG" | tail -1)\nprintf \'"'"'%s\\n\'"'"' "$launch" > "$E/live-launch-text.txt"'"'"',  '"'"'cp "$LAUNCH_LOG" "$E/live-launch-text.txt"'"'"') s=s.replace('"'"'T send-keys -t primary -l "$launch"; T send-keys -t primary Enter'"'"',  '"'"'while IFS= read -r ln; do T send-keys -t primary -l "$ln"; T send-keys -t primary Enter; sleep 0.2; done < "$LAUNCH_LOG"'"'"') open(p,'"'"'w'"'"').write(s) PY grep -n '"'"'LAUNCH_LOG'"'"' $L/driver.sh; bash $L/driver.sh 2>&1 | tee $E/live-bwrap-driver.log | sed -n '"'"'/--- pane/,/--- busy/p;/^v1/p;/wrapper.log/,+1p'"'"' | cut -c1-250; sleep 3; pgrep -f '"'"'fm-sandbox-relay.sh run'"'"' || echo "no relay left"; cut -c1-150 $E/live-launch-text.txt' && pwd -P >| /tmp/claude-e21d-cwd

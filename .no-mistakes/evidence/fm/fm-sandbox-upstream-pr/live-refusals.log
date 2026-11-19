@@ -1,0 +1,34 @@
+CASE=/tmp/fm-spawn-sandbox.TxuyOS/live HOME=/tmp/fm-spawn-sandbox.TxuyOS/live/home WT=/tmp/fm-spawn-sandbox.TxuyOS/live/wt STATE=/tmp/fm-spawn-sandbox.TxuyOS/live/home/state FAKEBIN=/tmp/fm-spawn-sandbox.TxuyOS/live/fake/fakebin
+== no config/sandbox (default)
+   exit=0  record sandbox=  launched plain
+   spawned sbx-r1 harness=omp kind=scout window=firstmate:fm-sbx-r1 worktree=/tmp/fm-spawn-sandbox.TxuyOS/sbx-r1/wt 
+== enforce=off kill switch
+   exit=0  record sandbox=  launched plain
+   spawned sbx-r2 harness=omp kind=scout window=firstmate:fm-sbx-r2 worktree=/tmp/fm-spawn-sandbox.TxuyOS/sbx-r2/wt 
+== unknown profile rejected by real wrapper --dry-run
+   exit=1  no record  nothing launched
+   error: sandbox profile bogus cannot be applied: the sandbox wrapper '/tmp/fm-spawn-sandbox.TxuyOS/sbx-r3/bwrap-wrapper' does not accept --profile bogus with --host-helper (profile unknown or wrapper too old); fix the wrapper named in config/sandbox, or --sandbox off where config/sandbox enforce=on allows it, and the worker was not launched 
+== missing wrapper binary
+   exit=1  no record  nothing launched
+   error: sandbox profile strict cannot be applied: the sandbox wrapper '/nonexistent/worker-sandbox' is not installed (not executable at '/nonexistent/worker-sandbox'); fix the wrapper named in config/sandbox, or --sandbox off where config/sandbox enforce=on allows it, and the worker was not launched 
+== explicit --sandbox with no wrapper line
+   exit=1  no record  nothing launched
+   error: sandbox profile strict cannot be applied: config/sandbox names no wrapper (add wrapper=<command>); fix the wrapper named in config/sandbox, or --sandbox off where config/sandbox enforce=on allows it, and the worker was not launched 
+== non-omp harness (claude) mapped
+   exit=1  no record  nothing launched
+   error: sandbox profile strict wraps only the omp harness (its busy relay is omp-specific), not claude; spawn on omp, or --sandbox off where config/sandbox enforce=on allows it 
+== strict: unmapped scout
+   exit=1  no record  nothing launched
+   error: config/sandbox enforce=strict maps no profile for scout spawns of project; add project:project=<profile> or a default= line 
+== strict: --sandbox off
+   exit=1  no record  nothing launched
+   error: config/sandbox enforce=strict refuses --sandbox off; set enforce=on to allow a per-spawn waiver 
+== on: --sandbox off waiver
+   exit=0  record sandbox=off  launched plain
+   spawned sbx-r9 harness=omp kind=scout window=firstmate:fm-sbx-r9 worktree=/tmp/fm-spawn-sandbox.TxuyOS/sbx-r9/wt sandbox=off 
+== malformed config
+   exit=1  no record  nothing launched
+   error: config/sandbox line 2 needs project:<name>=<profile> with simple names: project:project = strict 
+== relaunch of sandbox=strict task
+   exit=1 NOT wrapped; gen g1795075322.3634678.29987 -> g1795075322.3634678.29987; helper pins fresh gen
+   error: task sbx-rel1's endpoint reads 'ambiguous'; a relaunch requires a positively agent-free endpoint (stop the agent first with bin/fm-control.sh sbx-rel1 exit)

@@ -1,0 +1,50 @@
+bash-5.3$ export COMPACT_ADVISER_DISABLE=1; export FM_TASK_INBOX='/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.inbox'; '{run-worktree}
+5EFNXAN3D8K22/bin/fm-osc7501.sh' arm --task 'sbx-live-a1' --harness 'omp' --backend 'tmux' --kind 'scout' --state '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state' --config '/tmp/fm-spawn-sandbox.6kaS0r/
+live/home/config' --target 'firstmate:fm-sbx-live-a1' --agent-bin 'omp' >/dev/null || true
+bash-5.3$ '{run-worktree}/bin/fm-git-strip-ai-trailers.sh' env-file '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.git-hoo
+ks' '/tmp/fm-sbx-live-a1+8d5924b79b494d9e4b857f79ed7289d297a969b91bfab7f7126ddb5e34886b8e/git-config.s1795075276.3617656.8391.sh' && . '/tmp/fm-sbx-live-a1+8d5924b79b494d9e4b857f79ed7289d297a969b91bfa
+b7f7126ddb5e34886b8e/git-config.s1795075276.3617656.8391.sh' || return 1 2>/dev/null || exit 1; export FM_HOME='/tmp/fm-spawn-sandbox.6kaS0r/live/home'; '/tmp/fm-spawn-sandbox.6kaS0r/live/bwrap-wrappe
+r' '--profile' 'strict' '--worktree' '/tmp/fm-spawn-sandbox.6kaS0r/live/wt' '--ro' '{run-worktree}/bin' '--ro' '~/.n
+o-mistakes/worktrees/86f3a7716597/01M7SAEG4Q5985EFNXAN3D8K22/.agents' '--ro' '{run-worktree}/.omp' '--rw-create' '/tmp/fm-spawn-sandb
+ox.6kaS0r/live/home/state/sbx-live-a1.status' '--rw-create' '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.turn-ended' '--ro' '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/operational-inbox
+' '--rw' '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.inbox' '--rw' '/tmp/fm-spawn-sandbox.6kaS0r/live/home/data/sbx-live-a1' '--ro' '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live
+-a1.git-hooks' '--ro' '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.omp-ext.ts' '--rw' '/tmp/fm-sbx-live-a1' '--rw' '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.sbx/events' '-
+-env' 'COMPACT_ADVISER_DISABLE' '--env' 'FM_TASK_INBOX' '--host-helper' '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.sbx/relay-helper' ${FM_TASK_ID+--env} ${FM_TASK_ID+FM_TASK_ID} ${GOTMP
+DIR+--env} ${GOTMPDIR+GOTMPDIR} ${TRACEPARENT+--env} ${TRACEPARENT+TRACEPARENT} ${LAVISH_AXI_HOST+--env} ${LAVISH_AXI_HOST+LAVISH_AXI_HOST} ${LAVISH_AXI_PORT+--env} ${LAVISH_AXI_PORT+LAVISH_AXI_PORT}
+-- env -u CLAUDECODE -u PI_CODING_AGENT -u GROK_AGENT -u FM_PI_HARNESS -u GEMINI_CLI -u CURSOR_AGENT -u CURSOR_INVOKED_AS FM_OMP_HARNESS=omp OMP_SKIP_SETUP=1 '/tmp/fm-spawn-sandbox.6kaS0r/live/fake/fa
+kebin/omp' --config '{run-worktree}/.omp/fm-worker-overlay.yml' --auto-approve --cwd '/tmp/fm-spawn-sandbox.6kaS0r/live/wt' -e '/tmp/
+fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.omp-ext.ts' "$('{run-worktree}/bin/fm-operational-input.sh' encode launch-brief <
+ '/tmp/fm-spawn-sandbox.6kaS0r/live/home/data/sbx-live-a1/launch-brief.md')"
+PROBE task=unset inbox=/tmp/fm-spawn-sandbox.6kaS0r/live/home/state/sbx-live-a1.inbox comp=1
+PROBE pwd=/tmp/fm-spawn-sandbox.6kaS0r/live/wt
+PROBE victim-meta hidden
+PROBE state-list: operational-inbox sbx-live-a1.git-hooks sbx-live-a1.inbox sbx-live-a1.omp-ext.ts sbx-live-a1.sbx sbx-live-a1.status sbx-live-a1.turn-ended
+PROBE state WRITABLE
+PROBE fmhome write denied
+PROBE own status writable
+PROBE own data writable
+PROBE coderoot bin read-only
+PROBE projects hidden
+PROBE busy event spooled
+'{run-worktree}/bin/fm-osc7501.sh' disarm --state '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state' >/dev/null 2>/dev/null || true
+PROBE idle event spooled
+PROBE-END
+bash-5.3$ '{run-worktree}/bin/fm-osc7501.sh' disarm --state '/tmp/fm-spawn-sandbox.6kaS0r/live/home/state' >/dev/null 2>/dev/null ||
+true
+bash-5.3$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

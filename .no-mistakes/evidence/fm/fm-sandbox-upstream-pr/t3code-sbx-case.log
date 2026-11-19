@@ -1,0 +1,1 @@
+ok - fm-spawn.sh --backend t3code claude: refuses config/sandbox=default=strict it cannot honor before any mutation

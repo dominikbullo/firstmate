@@ -1,0 +1,35 @@
+fm-afk-launch: away-posture record archived at /tmp/fm-backend-t3code-tests.gnIGKW/restart-unknown-completed/home/state/afk-contracts/1795075339.afk-contract
+fm-afk-launch: away mode stopped; no daemon terminal was running, .afk cleared, and the posture record archived
+fm-afk-launch: away-posture record archived at /tmp/fm-backend-t3code-tests.gnIGKW/restart-unknown-failed/home/state/afk-contracts/1795075341.afk-contract
+fm-afk-launch: away mode stopped; no daemon terminal was running, .afk cleared, and the posture record archived
+ok - native restart clears session episode state and re-derives T3 stale warnings once on a fresh clock
+ok - away housekeeping preserves unknown stale rechecks and reports possible wedges until work resumes
+ok - away daemon on T3: a stall reported while unknown is not reported again once T3 reads idle
+ok - T3 stale watcher: harness=codex status=failed turn=fresh -> dead
+ok - t3code: a failed thread read reports unknown busy state, submits no away-mode injection, and keeps stale rechecks uncertain
+ok - T3 stale lookup honors paused and captain-held declarations
+ok - T3 stale watcher: harness=codex status=running turn=fresh -> absorb
+ok - T3 stale watcher: harness=claude status=running turn=fresh -> absorb
+ok - T3 stale watcher: harness=codex status=waiting turn=fresh -> absorb
+ok - T3 stale watcher: harness=codex status=starting turn=fresh -> surface
+ok - T3 stale watcher: harness=codex status=completed turn=fresh -> surface
+ok - T3 stale watcher: harness=codex status=failed turn=fresh -> dead
+ok - T3 stale watcher: harness=codex status=running turn=hung -> surface
+ok - fm_backend_t3code_runtime_check: a missing credential names the sign-in
+ok - fm_backend_t3code_runtime_check: a 401 names the fresh sign-in
+warning: T3 telemetry at http://127.0.0.1:40587 is not confirmed off; run the server that hosts Firstmate workers with T3CODE_TELEMETRY_ENABLED=false (docs/t3code-backend.md)
+ok - fm_backend_t3code_runtime_check: the tools/list gate and environment pin refuse control and teardown without a mutation
+ok - fm_backend_t3code_project_ensure: matches by realpath, otherwise creates with the fm- title
+ok - fm_backend_t3code_model_selection: T3's catalog decides driver, model, and effort; overrides keep other options; default handling, instances file
+ok - fm_backend_t3code_thread_create/turn_start: verified t3_thread_launch and t3_thread_send payloads
+ok - fm_backend_t3code_thread_create: a lost reply is uncertain and never retried; a mis-bound thread is archived and refused
+ok - fm_backend_t3code_thread_for_home: zero, one, ambiguous, and unreachable
+ok - T3 requires explicit selection and does not query the server during runtime detection
+ok - fm_backend_t3code_capture: renders the activity tail and the thread's status line
+ok - fm_backend_t3code_send_key: Escape and C-c interrupt, Enter no-ops, others refuse
+ok - fm_backend_t3code_send_text_submit: empty on accept, send-failed on rejection
+ok - t3code send: a reply lost after commit is unconfirmed through the adapter and fm-send, and the resend lands once
+ok - t3code send: a held request id stays unconfirmed when the next attempt fails locally, and the retry lands once
+not ok - a lost reply to a typed secondmate request is delivered-unconfirmed (exit 3)
+{run-worktree}/bin/fm-pending-reply-lib.sh: line 180: raw: unbound variable
+error: failed to create parent pending-reply expectation for t3smlost178cb82fd8: expected exit 3, got 1

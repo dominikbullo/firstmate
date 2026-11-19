@@ -1,0 +1,1 @@
+ok - teardown removes state/<id>.sbx, the sandboxed worker's relay spool and helper
