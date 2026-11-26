@@ -9,7 +9,9 @@ ok - fm-spawn: a non-omp harness and a raw launch command refuse while a profile
 ok - fm-spawn: a secondmate, local or remote, is never sandboxed, even under enforce=strict, and refuses --sandbox
 ok - fm-spawn: --relaunch re-wraps with the recorded profile and a fresh relay gen; --sandbox off is the only override; strict refuses a recorded waiver
 ok - fm-spawn: with FM_HOME at the code root the wrapper never sees the home, state/, data/, config/ or projects/
+ok - fm-spawn: the sandbox is never handed another task's launch record
 ok - fm-spawn: the sandboxed omp extension spools its edges and the relay applies them to the busy record
 ok - fm-spawn: the launch, task record, and busy extension match the pre-seam bytes with no or an inactive config/sandbox
-ok - fm-spawn: optional env names reach the wrapper as separate words under bash and zsh
+skip: fish not installed
+ok - fm-spawn: the wrapper's env names parse as static --env pairs in every pane shell
 all fm-spawn-sandbox tests passed

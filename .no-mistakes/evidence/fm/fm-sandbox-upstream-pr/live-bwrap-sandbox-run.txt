@@ -1,0 +1,30 @@
+--- host busy-state before:
+v1 gen=g1795686515.1657904.817 seq=1 state=busy source=fm-spawn event=launch-brief ts=1795686515
+
+--- pane capture
+export GOTMPDIR=/tmp/fm-live-scout/gotmp COMPACT_ADVISER_DISABLE=1 FM_TASK_ID=live-scout SBX_PROBE='/tmp/fmsbx-live.nBnrHc/c/wt/.probe.sh' SBX_EXTRA_RO='/tmp/fmsbx-live.nBnrHc/c/fake/fakebin' SBX_LOG='/tmp/fmsbx-live.nBnrHc/c/wrapper.log'; . '/tmp/fmsbx-live.nBnrHc/c/launch.sh'; echo LAUNCH_DONE
+bash-5.3$ export GOTMPDIR=/tmp/fm-live-scout/gotmp COMPACT_ADVISER_DISABLE=1 FM_TASK_ID=live-scout SBX_PROBE='/tmp/fmsbx-live.nBnrHc/c/wt/.probe.sh' SBX_EXTRA_RO='/tmp/fmsbx-live.nBnrHc/c/fake/fakebin' SBX_LOG='/tmp/fmsbx-live.nBnrHc/c/wrapper.log'; . '/tmp/fmsbx-live.nBnrHc/c/launch.sh'; echo LAUNCH_DONE
+PROBE begin uid=1001 task=live-scout
+PROBE ls-state: live-scout.git-hooks live-scout.inbox live-scout.omp-ext.ts live-scout.sbx live-scout.status live-scout.turn-ended 
+PROBE other-inbox: cat: /tmp/fmsbx-live.nBnrHc/c/home/state/other-task.inbox: No such file or directory
+PROBE other-data: cat: /tmp/fmsbx-live.nBnrHc/c/home/data/other-brief.md: No such file or directory
+PROBE meta: cat: /tmp/fmsbx-live.nBnrHc/c/home/state/live-scout.meta: No such file or directory
+PROBE config: ls: cannot access '/tmp/fmsbx-live.nBnrHc/c/home/config': No such file or directory
+PROBE real-home: 
+PROBE write-status: ok
+PROBE write-state-dir: 
+PROBE write-bin: touch: cannot touch '{run-worktree}/bin/evil': Read-only file system
+PROBE write-worktree: ok
+PROBE spooled busy edge
+FAKE_OMP_RAN task=live-scout inbox=/tmp/fmsbx-live.nBnrHc/c/home/state/live-scout.inbox
+LAUNCH_DONE
+bash-5.3$ 
+--- host busy-state after:
+v1 gen=g1795686515.1657904.817 seq=2 state=busy source=omp-ext event=turn_start ts=1795686518
+
+--- relay.log:
+cat: /tmp/fmsbx-live.nBnrHc/c/home/state/live-scout.sbx/relay.log: No such file or directory
+--- host status file:
+working
+--- leftover host files: evil-state=absent evil-bin=absent wt-write=present
+--- relay processes still alive: 0

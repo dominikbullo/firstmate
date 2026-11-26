@@ -1,0 +1,17 @@
+sed: -e expression #1, char 2: invalid usage of line address 0
+== H: mapped spawn then --relaunch re-wraps from meta
+[exit=0]
+  meta=sandbox=lab-profile wrapped=1 launched_bytes=2850
+error: task t-h's endpoint reads 'ambiguous'; a relaunch requires a positively agent-free endpoint (stop the agent first with bin/fm-control.sh t-h exit)
+[exit=1]
+  meta=sandbox=lab-profile wrapped=0
+0 launched_bytes=0
+  gen changed: no helper-in-relaunch=0
+   relaunch with another profile:
+error: task t-h's endpoint reads 'ambiguous'; a relaunch requires a positively agent-free endpoint (stop the agent first with bin/fm-control.sh t-h exit)
+[exit=1]
+== I: teardown removes the spool
+/tmp/fmsbx-live2.5MLO8B/c1/home/state/t-h.sbx
+teardown t-h complete (window firstmate:fm-t-h, worktree /tmp/fmsbx-live2.5MLO8B/c1/wt)
+Backlog: t-h just finished (this home keeps no markdown backlog at /tmp/fmsbx-live2.5MLO8B/c1/home/data/backlog.md). Update /tmp/fmsbx-live2.5MLO8B/c1/home/data/backlog.md - move t-h to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+  sbx after teardown: removed

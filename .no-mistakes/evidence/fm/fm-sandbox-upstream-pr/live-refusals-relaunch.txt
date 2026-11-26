@@ -1,0 +1,49 @@
+== A: no config/sandbox -> plain launch
+[exit=0]
+  meta=<no record> wrapped=0
+0 launched_bytes=1759
+  sbx dirs=0
+== B: --sandbox unknown profile under real wrapper -> refuse
+error: sandbox profile bogus cannot be applied: the sandbox wrapper '/tmp/fmsbx-live/wrapper.sh' does not accept --profile bogus with --host-helper (profile unknown or wrapper too old); fix the wrapper named in config/sandbox, or --sandbox off where config/sandbox enforce=on allows it, and the worker was not launched
+[exit=1]
+driver2.sh: line 12: /tmp/fmsbx-live2.hACdfH/c2/launch.log: No such file or directory
+  meta=<no record> wrapped=0 launched_bytes=0
+== C: mapped profile, wrapper missing -> refuse
+error: sandbox profile lab-profile cannot be applied: the sandbox wrapper '/nonexistent/worker-sandbox' is not installed (not executable at '/nonexistent/worker-sandbox'); fix the wrapper named in config/sandbox, or --sandbox off where config/sandbox enforce=on allows it, and the worker was not launched
+[exit=1]
+driver2.sh: line 12: /tmp/fmsbx-live2.hACdfH/c3/launch.log: No such file or directory
+  meta=<no record> wrapped=0 launched_bytes=0
+== D: enforce=strict, --sandbox off -> refuse
+error: config/sandbox enforce=strict refuses --sandbox off; set enforce=on to allow a per-spawn waiver
+[exit=1]
+driver2.sh: line 12: /tmp/fmsbx-live2.hACdfH/c4/launch.log: No such file or directory
+  meta=<no record> wrapped=0 launched_bytes=0
+== E: enforce=strict, unmapped scout -> refuse
+error: config/sandbox enforce=strict maps no profile for scout spawns of project; add project:project=<profile> or a default= line
+[exit=1]
+driver2.sh: line 12: /tmp/fmsbx-live2.hACdfH/c5/launch.log: No such file or directory
+  meta=<no record> wrapped=0 launched_bytes=0
+== F: mapped profile, non-omp harness (claude) -> refuse
+error: sandbox profile lab-profile wraps only the omp harness (its busy relay is omp-specific), not claude; spawn on omp, or --sandbox off where config/sandbox enforce=on allows it
+[exit=1]
+driver2.sh: line 12: /tmp/fmsbx-live2.hACdfH/c6/launch.log: No such file or directory
+  meta=<no record> wrapped=0 launched_bytes=0
+== G: enforce=on, --sandbox off -> waived, recorded off
+[exit=0]
+  meta=sandbox=off wrapped=0
+0 launched_bytes=1759
+== H: mapped spawn then --relaunch re-wraps from meta
+[exit=0]
+  meta=sandbox=lab-profile wrapped=1 launched_bytes=2850
+[exit=1]
+  meta=sandbox=lab-profile wrapped=0
+0 launched_bytes=0
+  gen changed: no helper-in-relaunch=0
+   relaunch with another profile:
+error: --relaunch reuses the task's recorded kind; --scout/--secondmate cannot override it
+[exit=1]
+== I: teardown removes the spool
+/tmp/fmsbx-live2.hACdfH/c8/home/state/t-h.sbx
+teardown t-h complete (window firstmate:fm-t-h, worktree /tmp/fmsbx-live2.hACdfH/c8/wt)
+Backlog: t-h just finished (this home keeps no markdown backlog at /tmp/fmsbx-live2.hACdfH/c8/home/data/backlog.md). Update /tmp/fmsbx-live2.hACdfH/c8/home/data/backlog.md - move t-h to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+  sbx after teardown: removed
