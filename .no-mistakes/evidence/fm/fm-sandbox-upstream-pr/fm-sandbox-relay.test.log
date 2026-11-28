@@ -1,0 +1,12 @@
+ok - relay: a valid edge file yields the same record as a direct fm-busy-event.sh apply
+ok - relay: edges apply in sequence order
+ok - relay: a superseded incarnation and a forged file gen leave the record unchanged
+ok - relay: malformed, oversize, schema-violating, and stray entries are dropped and the record is unchanged
+ok - relay: a symlink is dropped without following it
+ok - relay: an entry swapped for a FIFO after the check cannot block the relay
+ok - relay: a flood is bounded by the per-pass and per-second caps, and the spool drains
+ok - relay: run applies a file written while it polls and ends when teardown removes the spool
+ok - relay: a relay whose incarnation was re-armed ends by itself
+ok - relay: TERM drains the final edge, then ends
+all fm-sandbox-relay tests passed
+EXIT=0

@@ -1,0 +1,18 @@
+ok - fm-spawn: no config/sandbox leaves the launch, record, and busy extension untouched
+ok - fm-spawn: a mapped scout is wrapped at the one seam with the task binds, never state/ or FM_HOME
+ok - fm-spawn: explicit --sandbox beats project, which beats kind, which beats default
+ok - fm-spawn: launch-env-allowlist and the sandbox compose; the agent keeps its task variables
+ok - fm-spawn: enforce=off is a kill switch, on allows --sandbox off, strict refuses it and unmapped spawns
+ok - fm-spawn: a malformed config/sandbox refuses the spawn instead of launching unsandboxed
+ok - fm-spawn: a missing, unnamed, old, or profile-ignorant wrapper refuses and never launches raw
+ok - fm-spawn: a non-omp harness and a raw launch command refuse while a profile applies
+ok - fm-spawn: a secondmate, local or remote, is never sandboxed, even under enforce=strict, and refuses --sandbox
+ok - fm-spawn: --relaunch re-wraps with the recorded profile and a fresh relay gen; --sandbox off is the only override; strict refuses a recorded waiver
+ok - fm-spawn: with FM_HOME at the code root the wrapper never sees the home, state/, data/, config/ or projects/
+ok - fm-spawn: the sandbox is never handed another task's launch record
+ok - fm-spawn: the sandboxed omp extension spools its edges and the relay applies them to the busy record
+ok - fm-spawn: the launch, task record, and busy extension match the pre-seam bytes with no or an inactive config/sandbox
+skip: fish not installed
+ok - fm-spawn: the wrapper's env names parse as static --env pairs in every pane shell
+all fm-spawn-sandbox tests passed
+EXIT=0

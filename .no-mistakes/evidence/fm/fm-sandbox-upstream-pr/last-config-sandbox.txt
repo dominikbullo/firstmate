@@ -1,0 +1,3 @@
+wrapper=/tmp/fm-lab.clpkCF/sbxbin/worker-sandbox
+enforce=on
+project:sbxdemo=lab-strict

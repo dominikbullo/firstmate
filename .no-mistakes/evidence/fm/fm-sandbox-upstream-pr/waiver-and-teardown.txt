@@ -1,0 +1,17 @@
+### enforce=on --sandbox off waiver
+spawned w-off harness=omp kind=scout window=primary:fm-w-off worktree=~/.treehouse/sbxdemo-f53720/4/sbxdemo sandbox=off
+meta sandbox: sandbox=off
+sbx dir: none
+### teardown sbx-plain
+teardown sbx-plain complete (window primary:fm-sbx-plain, worktree ~/.treehouse/sbxdemo-f53720/1/sbxdemo)
+Backlog: sbx-plain just finished (this home keeps no markdown backlog at /tmp/fm-lab.clpkCF/data/backlog.md). Update /tmp/fm-lab.clpkCF/data/backlog.md - move sbx-plain to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+sbx dir after: removed meta: removed
+### teardown sbx-scout
+### teardown sbx-re
+WARNING: watcher still down (same stale episode; last beat: 470s ago, grace 300s) - full banner already printed this episode.
+teardown: reaping leaked worktree process group for sbx-re: 1327429
+sbx dir after: removed
+### teardown w-off
+WARNING: watcher still down (same stale episode; last beat: 472s ago, grace 300s) - full banner already printed this episode.
+teardown: reaping leaked worktree process group for w-off: 1403172
+sbx dir after: removed

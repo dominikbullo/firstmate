@@ -1,0 +1,51 @@
+### unknown profile (wrapper --dry-run rejects)
+$ fm-spawn.sh r-unknown /tmp/fm-lab.clpkCF/projects/sbxdemo --scout --sandbox nosuch-profile
+error: sandbox profile nosuch-profile cannot be applied: the sandbox wrapper '/tmp/fm-lab.clpkCF/sbxbin/worker-sandbox' does not accept --profile nosuch-profile with --host-helper (profile unknown or wrapper too old); fix the wrapper named in config/sandbox, or --sandbox off where config/sandbox enforce=on allows it, and the worker was not launched
+exit=1 meta=absent window=0
+
+### non-omp harness under mapped profile
+$ fm-spawn.sh r-claude /tmp/fm-lab.clpkCF/projects/sbxdemo --scout --harness claude
+error: sandbox profile lab-strict wraps only the omp harness (its busy relay is omp-specific), not claude; spawn on omp, or --sandbox off where config/sandbox enforce=on allows it
+exit=1 meta=absent window=0
+
+### t3code backend under mapped profile
+$ fm-spawn.sh r-t3 /tmp/fm-lab.clpkCF/projects/sbxdemo --scout --backend t3code
+fm-t3-mcp: no T3 credential at /tmp/fm-lab.clpkCF/config/t3code-token; the captain signs in with: bin/fm-t3-mcp.mjs login --access full-access
+exit=1 meta=absent window=0
+
+### secondmate with --sandbox
+$ fm-spawn.sh r-sm --secondmate --sandbox lab-strict
+error: --sandbox applies to ship and scout spawns; a secondmate holds fleet state and never runs sandboxed
+exit=1 meta=absent window=0
+
+### missing wrapper
+$ fm-spawn.sh r-nowrap /tmp/fm-lab.clpkCF/projects/sbxdemo --scout
+error: sandbox profile lab-strict cannot be applied: the sandbox wrapper '/nonexistent/worker-sandbox' is not installed (not executable at '/nonexistent/worker-sandbox'); fix the wrapper named in config/sandbox, or --sandbox off where config/sandbox enforce=on allows it, and the worker was not launched
+exit=1 meta=absent window=0
+
+### no wrapper line, explicit --sandbox
+$ fm-spawn.sh r-nowrapline /tmp/fm-lab.clpkCF/projects/sbxdemo --scout --sandbox lab-strict
+error: sandbox profile lab-strict cannot be applied: config/sandbox names no wrapper (add wrapper=<command>); fix the wrapper named in config/sandbox, or --sandbox off where config/sandbox enforce=on allows it, and the worker was not launched
+exit=1 meta=absent window=0
+
+### enforce=strict, unmapped scout
+$ fm-spawn.sh r-strict /tmp/fm-lab.clpkCF/projects/sbxdemo --scout
+error: config/sandbox enforce=strict maps no profile for scout spawns of sbxdemo; add project:sbxdemo=<profile> or a default= line
+exit=1 meta=absent window=0
+
+### enforce=strict, --sandbox off
+$ fm-spawn.sh r-strictoff /tmp/fm-lab.clpkCF/projects/sbxdemo --scout --sandbox off
+error: config/sandbox enforce=strict refuses --sandbox off; set enforce=on to allow a per-spawn waiver
+exit=1 meta=absent window=0
+
+### malformed config
+$ fm-spawn.sh r-malformed /tmp/fm-lab.clpkCF/projects/sbxdemo --scout
+error: config/sandbox line 4 is not <key>=<value>: bogus line
+exit=1 meta=absent window=0
+
+### t3code backend under mapped profile (lab dummy T3 token)
+$ fm-spawn.sh r-t3 /tmp/fm-lab.clpkCF/projects/sbxdemo --scout --harness codex --backend t3code
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+fm-t3-mcp: T3 credential /tmp/fm-lab.clpkCF/config/t3code-token is not valid JSON: Unexpected token 'l', "lab-dummy-token
+" is not valid JSON
+exit=1 meta=absent

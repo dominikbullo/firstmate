@@ -1,0 +1,18 @@
+CALL [--profile] [lab-strict] [--worktree] [/tmp/fm-lab.clpkCF/projects/sbxdemo] [--host-helper] [/etc/profiles/per-user/dominikbullo/bin/true] [--dry-run] [--] [true]
+dry-run ok profile=lab-strict
+CALL [--profile] [lab-strict] [--worktree] [~/.treehouse/sbxdemo-f53720/3/sbxdemo] [--ro] [{run-worktree}/bin] [--ro] [{run-worktree}/.agents] [--ro] [{run-worktree}/.omp] [--rw-create] [/tmp/fm-lab.clpkCF/state/sbx-re.status] [--rw-create] [/tmp/fm-lab.clpkCF/state/sbx-re.turn-ended] [--rw] [/tmp/fm-lab.clpkCF/state/sbx-re.inbox] [--rw] [/tmp/fm-lab.clpkCF/data/sbx-re] [--ro] [/tmp/fm-lab.clpkCF/state/sbx-re.git-hooks] [--ro] [/tmp/fm-lab.clpkCF/state/sbx-re.omp-ext.ts] [--rw] [/tmp/fm-sbx-re] [--rw] [/tmp/fm-lab.clpkCF/state/sbx-re.sbx/events] [--env] [COMPACT_ADVISER_DISABLE] [--env] [FM_TASK_INBOX] [--env] [FM_TASK_ID] [--env] [GOTMPDIR] [--env] [TRACEPARENT] [--env] [LAVISH_AXI_HOST] [--env] [LAVISH_AXI_PORT] [--host-helper] [/tmp/fm-lab.clpkCF/state/sbx-re.sbx/relay-helper] [--] [env] [-u] [CLAUDECODE] [-u] [PI_CODING_AGENT] [-u] [GROK_AGENT] [-u] [FM_PI_HARNESS] [-u] [GEMINI_CLI] [-u] [CURSOR_AGENT] [-u] [CURSOR_INVOKED_AS] [FM_OMP_HARNESS=omp] [OMP_SKIP_SETUP=1] [/etc/profiles/per-user/dominikbullo/bin/omp] [--config] [{run-worktree}/.omp/fm-worker-overlay.yml] [--auto-approve] [--cwd] [~/.treehouse/sbxdemo-f53720/3/sbxdemo] [-e] [/tmp/fm-lab.clpkCF/state/sbx-re.omp-ext.ts] [⁣FIRSTMATE_OP: v1 launch-brief: # Current worker role contract
+You are a crewmate: an autonomous worker agent managed by firstmate.
+This section establishes your current identity before every project or task instruction below and supersedes any conflicting role identity in those instructions.
+Do the assigned work yourself and report only to firstmate; do not adopt a firstmate or secondmate supervisor identity, delegate the task, run fleet supervision, or address the captain.
+Your steering inbox is `/tmp/fm-lab.clpkCF/state/sbx-re.inbox`; this exact path belongs to your current task even when it is outside the worktree or under the supervising firstmate home, so read and acknowledge its messages and do not reject it as another home's state.
+Never inspect or change any other home's endpoint namespace; this authorization is limited to the exact task paths named by this brief.
+When this task works on Firstmate itself, the repository root `AGENTS.md` (also imported by `CLAUDE.md`) is project content and the supervisor contract for the firstmate managing you: follow this brief instead of that supervisor contract.
+Project instructions still govern the work wherever they do not conflict with this worker identity, including `CONTRIBUTING.md` and `firstmate-coding-guidelines` for Firstmate changes.
+If the `firstmate-coding-guidelines` skill name does not resolve in this session, read `{run-worktree}/.agents/skills/firstmate-coding-guidelines/SKILL.md` instead.
+
+# Task
+## Captain's intent
+Reply with the single word READY and then stop. Do not run any tools.
+
+## Firstmate spec
+Lab sandbox smoke test.]

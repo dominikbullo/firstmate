@@ -1,0 +1,26 @@
+== inside sandbox: ls FM_HOME/state ==
+total 12
+drwx------ 5 dominikbullo users  160 Nov 28 12:07 .
+drwx------ 5 dominikbullo users  100 Nov 28 12:07 ..
+dr-x------ 2 dominikbullo users 4096 Nov 28 12:07 sbx-scout.git-hooks
+drwxr-xr-x 3 dominikbullo users 4096 Nov 28 12:07 sbx-scout.inbox
+-rw-r--r-- 1 dominikbullo users 1966 Nov 28 12:07 sbx-scout.omp-ext.ts
+drwx------ 3 dominikbullo users   60 Nov 28 12:07 sbx-scout.sbx
+-rw-r--r-- 1 dominikbullo users    0 Nov 28 12:07 sbx-scout.status
+-rw-r--r-- 1 dominikbullo users    0 Nov 28 12:07 sbx-scout.turn-ended
+== ls FM_HOME/data ==
+total 4
+drwx------ 3 dominikbullo users   60 Nov 28 12:07 .
+drwx------ 5 dominikbullo users  100 Nov 28 12:07 ..
+drwxr-xr-x 2 dominikbullo users 4096 Nov 28 12:07 sbx-scout
+== other task brief ==
+cat: /tmp/fm-lab.clpkCF/data/other-task/brief.md: No such file or directory
+== FM_HOME/config ==
+ls: cannot access '/tmp/fm-lab.clpkCF/config': No such file or directory
+== HOME ==
+.
+..
+.no-mistakes
+.omp
+.treehouse
+== env FM_TASK_ID=sbx-scout

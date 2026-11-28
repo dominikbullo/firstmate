@@ -1,0 +1,12 @@
+window=primary:fm-sbx-scout
+endpoint_task_id=sbx-scout
+worktree=~/.treehouse/sbxdemo-f53720/2/sbxdemo
+project=/tmp/fm-lab.clpkCF/projects/sbxdemo
+harness=omp
+kind=scout
+tasktmp=/tmp/fm-sbx-scout
+model=default
+effort=default
+sandbox=lab-strict
+busy_gen=g1795864059.1292637.30113
+spawn_gen=s1795864059.1291836.6744
